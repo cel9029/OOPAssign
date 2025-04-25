@@ -38,7 +38,7 @@ The graphical user interface (GUI) allows users to enter feature values, and the
 
 2. **Run the Program**:
    - Clone this repository.
-   - Ensure you have the required classes (`NaiveBayesClassifier`, `FileProcessor`, `PredictorGUI`) in the same directory.
+   - Ensure you have the required classes (`Predictor`, `FileProcessor`, `PredictorGUI`) in the same directory.
    - Run the `PredictorGUI` class, which will initialize the GUI.
    - Enter the values for the four features in the provided text fields.
    - Click the **"Predict"** button to get the classifier's prediction.
