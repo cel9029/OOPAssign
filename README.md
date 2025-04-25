@@ -53,10 +53,10 @@ The graphical user interface (GUI) allows users to enter feature values, and the
 
 ## File Description
 
-- **`NaiveBayesClassifier.java`**: The core logic for training and predicting with a Naive Bayes classifier.
+- **`Predictor.java`**: The core logic for training and predicting with a Naive Bayes classifier.
 - **`FileProcessor.java`**: A utility class for reading the dataset from a CSV file.
 - **`PredictorGUI.java`**: The graphical user interface that allows users to input data and view predictions.
-- **`binary_categorical_dataset.csv`**: Example dataset used for training the classifier. This file contains 200 rows of data with 4 feature columns and 1 label column.
+- **`package_data.csv`**: Example dataset used for training the classifier. This file contains 200 rows of data with 4 feature columns and 1 label column.
 
 ## Code Structure
 
