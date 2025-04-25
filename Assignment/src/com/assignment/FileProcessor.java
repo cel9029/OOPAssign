@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileProcessor {
-	String fileName;
-	File fileExample;
-	Scanner myScanner;
-    PrintWriter pwInput;
-    FileWriter fwInput;
+	private String fileName;
+	private File fileExample;
+	private Scanner myScanner;
+    	private PrintWriter pwInput;
+    	private FileWriter fwInput;
 	
 	// Constructor
 	FileProcessor (String fileName) {
