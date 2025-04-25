@@ -20,7 +20,7 @@ This project implements a simple Naive Bayes Classifier to predict whether a pac
 The graphical user interface (GUI) allows users to enter feature values, and the classifier will output the prediction (whether the package is damaged or not).
 
 ### Key Components:
-- **NaiveBayesClassifier**: The classifier that performs the learning and prediction using the Naive Bayes algorithm.
+- **Predictor**: The classifier that performs the learning and prediction using the Naive Bayes algorithm.
 - **FileProcessor**: A utility class to read the dataset from a CSV file.
 - **PredictorGUI**: A graphical user interface (GUI) for interacting with the classifier.
 
