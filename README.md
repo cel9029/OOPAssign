@@ -77,7 +77,6 @@ The graphical user interface (GUI) allows users to enter feature values, and the
 
 - **Control.java**:
    - Manages the interaction between the GUI and the classifier.
-   - Initializes the classifier, trains it with the dataset, and handles button clicks for predictions.
 
 ## Reflection
 If I had more time, I think I would like to research and prepare more for Level 4 which I couldn't successfully do.
