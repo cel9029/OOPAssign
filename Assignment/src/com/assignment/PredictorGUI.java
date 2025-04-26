@@ -14,7 +14,6 @@ public class PredictorGUI implements ActionListener {
     private JButton predictBtn, addRowBtn, recalBtn;
     private String newRow;
     private FileProcessor fp;
-    
 
     public void run() {
         // Create the frame and set its properties
@@ -34,7 +33,7 @@ public class PredictorGUI implements ActionListener {
         resultLabel = new JLabel("Prediction: ");
         predictBtn = new JButton("Predict");
         addRowBtn = new JButton("Add New Row");
-        recalBtn = new JButton("Recalculate Data");
+        recalBtn = new JButton("Recalculate and Train Data");
 
         // Add labels and text fields to the frame
         frame.add(new JLabel("Feature 1:"));
@@ -119,7 +118,7 @@ public class PredictorGUI implements ActionListener {
             classifier.train();
             fp.closeReadFile();
             
-            JOptionPane.showMessageDialog(null, "Data Recalculated");
+            JOptionPane.showMessageDialog(null, "Data Recalculated and Trained!");
         }
     }
 
