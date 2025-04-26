@@ -75,6 +75,12 @@ public class PredictorGUI implements ActionListener {
 		if (e.getSource() == predictBtn) {
             // Get input from text fields
             String[] input = { f1.getText(), f2.getText(), f3.getText(), f4.getText() };
+            
+            // Error Checking if text fields are empty
+            if (input[0].isEmpty() || input[1].isEmpty() || input[2].isEmpty() || input[3].isEmpty() ) {
+                JOptionPane.showMessageDialog(null, "Please fill all fields (4 features)");
+                return;
+            }
 
             // Get prediction from classifier
             String prediction = classifier.predict(input);
@@ -86,19 +92,15 @@ public class PredictorGUI implements ActionListener {
 		// When the Add Row Button is clicked
 		if (e.getSource() == addRowBtn) {
             // Get input from text fields
-            String feature1 = f1.getText();
-            String feature2 = f2.getText();
-            String feature3 = f3.getText();
-            String feature4 = f4.getText();
-            String label = labelField.getText();
+			String[] input = { f1.getText(), f2.getText(), f3.getText(), f4.getText(), labelField.getText() };
             
             // Error Checking if text fields are empty
-            if (feature1.isEmpty() || feature2.isEmpty() || feature3.isEmpty() || feature4.isEmpty() || label.isEmpty()) {
+            if (input[0].isEmpty() || input[1].isEmpty() || input[2].isEmpty() || input[3].isEmpty() || input[4].isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Please fill all fields (4 features + label)");
                 return;
             }
 
-            newRow = feature1 + "," + feature2 + "," + feature3 + "," + feature4 + "," + label;
+            newRow = input[0] + "," + input[1] + "," + input[2] + "," + input[3] + "," + input[4];
             
             // Append to file
             fp.getFileWriter();
