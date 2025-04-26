@@ -68,10 +68,6 @@ public class Predictor {
 
     // Predict the label for a set of input features
     public String predict(String[] inputFeatures) {
-        if (inputFeatures.length != 4) { // Check if input features have exactly 4 elements
-            throw new IllegalArgumentException("Exactly 4 features are required.");
-        }
-
         double totalRows = dataset.size(); // Total number of rows in dataset
         Map<String, Double> labelProbabilities = new HashMap<>();
 
@@ -86,7 +82,7 @@ public class Predictor {
                 Map<String, Integer> featureLabelCount = featureCounts.getOrDefault(featureKey, new HashMap<>());
                 int featureCount = featureLabelCount.getOrDefault(label, 0); // Get count for feature-label pair
 
-                // Multiply the current probability by the feature probability
+                // Multiply the current probability by the feature probability (without smoothing)
                 probability *= (double) featureCount / labelCounts.get(label);
             }
 
