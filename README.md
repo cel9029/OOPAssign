@@ -10,8 +10,7 @@ The project also includes a graphical user interface (GUI) that allows users to 
 - [How to Use](#how-to-use)
 - [File Description](#file-description)
 - [Code Structure](#code-structure)
-- [Example](#example)
-- [Licenses](#licenses)
+- [Reflection](#reflection)
 
 ## Introduction
 
@@ -80,22 +79,6 @@ The graphical user interface (GUI) allows users to enter feature values, and the
    - Manages the interaction between the GUI and the classifier.
    - Initializes the classifier, trains it with the dataset, and handles button clicks for predictions.
 
-## Example
+## Reflection
+If I had more time, I think I would like to research and prepare more for Level 4 which I couldn't successfully do.
 
-For a dataset with the following features and labels:
-
-| Feature 1 | Feature 2 | Feature 3 | Feature 4 | PackageIsDamaged |
-|-----------|-----------|-----------|-----------|------------------|
-| red       | small     | soft      | round     | yes              |
-| blue      | large     | hard      | square    | no               |
-| red       | large     | soft      | square    | yes              |
-| blue      | small     | hard      | round     | no               |
-
-### Example Prediction:
-If the user enters the following feature values:
-- **Feature 1**: `red`
-- **Feature 2**: `small`
-- **Feature 3**: `soft`
-- **Feature 4**: `round`
-
-The classifier would predict `PackageIsDamaged = yes` based on the trained model.
