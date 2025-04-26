@@ -82,7 +82,7 @@ public class Predictor {
                 Map<String, Integer> featureLabelCount = featureCounts.getOrDefault(featureKey, new HashMap<>());
                 int featureCount = featureLabelCount.getOrDefault(label, 0); // Get count for feature-label pair
 
-                // Multiply the current probability by the feature probability (without smoothing)
+                // Multiply the current probability by the feature probability
                 probability *= (double) featureCount / labelCounts.get(label);
             }
 
