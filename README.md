@@ -17,7 +17,7 @@ The project also includes a graphical user interface (GUI) that allows users to 
 
 This project implements a simple Naive Bayes Classifier to predict whether a package is damaged based on categorical features. The classifier is trained on a dataset of labeled examples and can predict the label (`"yes"` or `"no"`) for new instances based on their feature values.
 
-The graphical user interface (GUI) allows users to enter feature values, and the classifier will output the prediction (whether the package is damaged or not).
+The graphical user interface (GUI) allows users to enter feature values, and the classifier will output the prediction (whether the package is damaged or not). The GUI also allows users to add new rows to the data and recalculate.
 
 ### Key Components:
 - **Predictor**: The classifier that performs the learning and prediction using the Naive Bayes algorithm.
@@ -37,11 +37,15 @@ The graphical user interface (GUI) allows users to enter feature values, and the
    - **Column 5**: Label (e.g., `"yes"` or `"no"`).
 
 2. **Run the Program**:
-   - Clone this repository.
    - Ensure you have the required classes (`Predictor`, `FileProcessor`, `PredictorGUI`) in the same directory.
    - Run the `PredictorGUI` class, which will initialize the GUI.
    - Enter the values for the four features in the provided text fields.
    - Click the **"Predict"** button to get the classifier's prediction.
+  
+3. **Add New Data and Recalculate**:
+   - Enter the values for the four features and label in the provided text fields.
+   - Click the **Add New Row** button to add a new row.
+   - Click the **Recalculate Data** button to recalculate your data with the new rows added.
 
 3. **Example**:
    - If the feature values are:
@@ -70,6 +74,7 @@ The graphical user interface (GUI) allows users to enter feature values, and the
 - **PredictorGUI.java**:
    - The main GUI for interacting with the classifier.
    - Allows users to input feature values and see the predicted label.
+   - Allows users to add new rows and recalculate the data
 
 - **Control.java**:
    - Manages the interaction between the GUI and the classifier.
