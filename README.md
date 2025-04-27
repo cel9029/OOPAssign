@@ -81,3 +81,6 @@ The graphical user interface (GUI) allows users to enter feature values, and the
 ## Reflection
 If I had more time, I think I would like to research and prepare more for Level 4 which I couldn't successfully do.
 
+## Frequency Table
+https://github.com/cel9029/OOPAssign/blob/main/Assignment/package_data.csv
+
