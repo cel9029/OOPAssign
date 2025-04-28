@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Predictor {
-	private List<String[]> dataset;
+    private List<String[]> dataset;
     private Map<String, Integer> labelCounts = new HashMap<>();
     private Map<String, Map<String, Integer>> featureCounts = new HashMap<>();
     private Set<String> possibleLabels = new HashSet<>();
@@ -37,31 +37,21 @@ public class Predictor {
         // Loop through each row in the dataset
         for (String[] row : dataset) {
             String label = row[4]; // Get the label from 5th column
+            
             // Increment the count for this label
-            if (labelCounts.containsKey(label)) {
-                labelCounts.put(label, labelCounts.get(label) + 1);
-            } else {
-                labelCounts.put(label, 1);
-            }
+            labelCounts.put(label, labelCounts.getOrDefault(label, 0) + 1);
 
             // Loop through the first 4 columns (features)
             for (int i = 0; i < 4; i++) {
-                String featureKey = "F" + i + "=" + row[i] + "|Label=" + label;
+                String featureValue = row[i]; // Get the feature value
+                // Ensure the map for the label exists
+                featureCounts.putIfAbsent(label, new HashMap<>());
                 
-                // Check if the featureKey exists in the featureCounts map
-                if (!featureCounts.containsKey(featureKey)) {
-                    featureCounts.put(featureKey, new HashMap<>()); // Initialise a new map for this key
-                }
-
-                // Get the map of label counts for this feature
-                Map<String, Integer> featureLabelCount = featureCounts.get(featureKey);
-
-                // Increment the count for this feature-label pair
-                if (featureLabelCount.containsKey(label)) {
-                    featureLabelCount.put(label, featureLabelCount.get(label) + 1);
-                } else {
-                    featureLabelCount.put(label, 1);
-                }
+                // Get the map for this label
+                Map<String, Integer> featureLabelCount = featureCounts.get(label);
+                
+                // Increment the count for this feature value under the label
+                featureLabelCount.put(featureValue, featureLabelCount.getOrDefault(featureValue, 0) + 1);
             }
         }
     }
@@ -78,9 +68,10 @@ public class Predictor {
 
             // Loop through the input features
             for (int i = 0; i < 4; i++) {
-                String featureKey = "F" + i + "=" + inputFeatures[i] + "|Label=" + label;
-                Map<String, Integer> featureLabelCount = featureCounts.getOrDefault(featureKey, new HashMap<>());
-                int featureCount = featureLabelCount.getOrDefault(label, 0); // Get count for feature-label pair
+                String featureValue = inputFeatures[i]; // Get the feature value
+                // Get the map for the label
+                Map<String, Integer> featureLabelCount = featureCounts.getOrDefault(label, new HashMap<>());
+                int featureCount = featureLabelCount.getOrDefault(featureValue, 0); // Get count for feature-label pair
 
                 // Multiply the current probability by the feature probability
                 probability *= (double) featureCount / labelCounts.get(label);
